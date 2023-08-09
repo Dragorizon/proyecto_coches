@@ -39,5 +39,5 @@ public interface IMarcaCocheMapper {
      * @param marcasCocheEntity Entidad a transformar
      * @return Lista transformada
      */
-    List<MarcaCocheDto> toMarcaCocheDto(List<MarcaCocheEntity> marcasCocheEntity);
+    List<MarcaCocheDto> toMarcasCocheDto(List<MarcaCocheEntity> marcasCocheEntity);
 }
