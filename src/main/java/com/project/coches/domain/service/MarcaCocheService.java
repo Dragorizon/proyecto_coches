@@ -46,7 +46,22 @@ public class MarcaCocheService implements IMarcaCocheService{
      */
     @Override
     public MarcaCocheDto save(MarcaCocheDto newMarcaCoche) {
+        System.out.println("holasmdkadasjdnasjdnasjkdasndjk");
         return iMarcaCocheRepository.save(newMarcaCoche);
+    }
+
+    /**
+     * Actualiza una marca coche
+     * @param newMarcaCoche marca coche a actualizar
+     * @return Optional con marca coche actualizado
+     */
+    @Override
+    public Optional<MarcaCocheDto> update(MarcaCocheDto newMarcaCoche) {
+        if(iMarcaCocheRepository.getMarcaCoche(newMarcaCoche.getId()).isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(iMarcaCocheRepository.save(newMarcaCoche)) ;
     }
 
     /**
@@ -56,11 +71,11 @@ public class MarcaCocheService implements IMarcaCocheService{
      */
     @Override
     public boolean delete(Integer idMarcaCoche) {
-        try {
-            iMarcaCocheRepository.delete(idMarcaCoche);
-            return true;
-        }catch (Exception e) {
+
+        if(iMarcaCocheRepository.getMarcaCoche(idMarcaCoche).isEmpty()) {
             return false;
         }
+        iMarcaCocheRepository.delete(idMarcaCoche);
+        return true;
     }
 }

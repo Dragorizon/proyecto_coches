@@ -48,18 +48,19 @@ public class MarcaCocheController {
 
     /**
      * Crea una nueva marca coche
-     * @param marcaCocheDto marca coche a crear
+     * @param marcaCocheDtoNew marca coche a crear
      * @return HttpCode Create si la guarda correctamente, HttpCode BAD REQUEST de lo contrario
      */
-    @PostMapping
-    public ResponseEntity<MarcaCocheDto> save(@RequestBody MarcaCocheDto marcaCocheDto) {
+    @PostMapping()
+    public ResponseEntity<MarcaCocheDto> save(@RequestBody MarcaCocheDto marcaCocheDtoNew) {
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body((iMarcaCocheService.save(marcaCocheDto)));
-
+                    .body((iMarcaCocheService.save(marcaCocheDtoNew)));
         } catch (Exception e) {
+            System.out.println("entro al catch");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(null);
+                    .build();
+
         }
     }
 
@@ -68,10 +69,11 @@ public class MarcaCocheController {
      * @param marcaCocheDtoUpdate Marca coche actualizada
      * @return HttCode OK si la actualiza correctamente
      */
-    @PutMapping
+    @PatchMapping
     public ResponseEntity<MarcaCocheDto> update(@RequestBody MarcaCocheDto marcaCocheDtoUpdate){
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(iMarcaCocheService.save(marcaCocheDtoUpdate));
+
+        return ResponseEntity.of(iMarcaCocheService.update(marcaCocheDtoUpdate));
+
     }
 
     /**

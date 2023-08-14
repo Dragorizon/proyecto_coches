@@ -1,6 +1,8 @@
 package com.project.coches.persistance.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +17,7 @@ public class MarcaCocheEntity {
     private Integer id;
 
     @Column(name = "descripcion")
+    @NotEmpty
     private String description;
 
 }

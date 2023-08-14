@@ -27,6 +27,13 @@ public interface IMarcaCocheService {
     MarcaCocheDto save(MarcaCocheDto newMarcaCoche);
 
     /**
+     * actualiza una marca coche
+     * @param newMarcaCoche marca coche a actualizar
+     * @return marca coche actualizada
+     */
+    Optional<MarcaCocheDto> update(MarcaCocheDto newMarcaCoche);
+
+    /**
      * Elimina una marca coche dada su id
      * @param idMarcaCoche Id del marca coche a eliminar
      * @return true si se elimino, false de lo contrario
