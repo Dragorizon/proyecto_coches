@@ -57,7 +57,6 @@ public class MarcaCocheController {
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body((iMarcaCocheService.save(marcaCocheDtoNew)));
         } catch (Exception e) {
-            System.out.println("entro al catch");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .build();
 
