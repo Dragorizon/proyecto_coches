@@ -62,14 +62,14 @@ public class ClienteController {
      */
     @PostMapping()
     public ResponseEntity<ResponseClienteDto> save(@RequestBody ClienteDto clienteDtoNew) {
-        try {
+//        try {
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body((iClienteService.save(clienteDtoNew)));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(new ResponseClienteDto(e.getMessage()));
-
-        }
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+//                    .body(new ResponseClienteDto(e.getMessage()));
+//
+//        }
     }
 
 
@@ -87,11 +87,11 @@ public class ClienteController {
 
     /**
      * Elimina un cliente dado su carnetID
-     * @param carnetID carnetId del cliente a eliminar
+     * @param carnetId carnetId del cliente a eliminar
      * @return HttpCode Ok si la elimina, HttpCode NOT FOUND si no existe
      */
     @DeleteMapping(path = "/{carnetId}")
-    public ResponseEntity<Boolean> delete(@PathVariable String carnetID){
-        return new ResponseEntity<>(this.iClienteService.delete(carnetID) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+    public ResponseEntity<Boolean> delete(@PathVariable String carnetId){
+        return new ResponseEntity<>(this.iClienteService.delete(carnetId) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 }
