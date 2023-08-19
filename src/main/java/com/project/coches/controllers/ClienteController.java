@@ -2,7 +2,7 @@ package com.project.coches.controllers;
 
 import com.project.coches.domain.dto.ClienteDto;
 import com.project.coches.domain.dto.ResponseClienteDto;
-import com.project.coches.domain.service.IClienteService;
+import com.project.coches.domain.useCase.IClienteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

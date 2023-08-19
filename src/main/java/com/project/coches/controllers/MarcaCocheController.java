@@ -1,7 +1,7 @@
 package com.project.coches.controllers;
 
 import com.project.coches.domain.dto.MarcaCocheDto;
-import com.project.coches.domain.service.IMarcaCocheService;
+import com.project.coches.domain.useCase.IMarcaCocheService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

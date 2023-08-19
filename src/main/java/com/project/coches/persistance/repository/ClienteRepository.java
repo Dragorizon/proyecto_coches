@@ -2,8 +2,8 @@ package com.project.coches.persistance.repository;
 
 import com.project.coches.domain.dto.ClienteDto;
 import com.project.coches.domain.repository.IClienteRepository;
+import com.project.coches.persistance.crud.IClienteCrudRepository;
 import com.project.coches.persistance.entity.ClienteEntity;
-import com.project.coches.persistance.entity.MarcaCocheEntity;
 import com.project.coches.persistance.mapper.IClienteMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -39,6 +39,7 @@ public class ClienteRepository implements IClienteRepository {
     public ClienteDto save(ClienteDto newCliente) {
         ClienteEntity clienteEntity = iClienteMapper.toClienteEntity(newCliente);
         return iClienteMapper.toClienteDto(iClienteCrudRepository.save(clienteEntity));
+//        return iClienteMapper.toClienteDto(iClienteCrudRepository.save(iClienteMapper.toClienteEntity(newCliente)));
     }
 
     @Override

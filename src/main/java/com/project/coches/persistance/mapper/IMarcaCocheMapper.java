@@ -32,6 +32,7 @@ public interface IMarcaCocheMapper {
      * @return  entity convertido
      */
     @InheritInverseConfiguration
+    @Mapping(target = "carroEntities", ignore = true) //se ignora el atributo de la relacion entre coche y marcaCoche
     MarcaCocheEntity toMarcaCocheEntity(MarcaCocheDto marcaDto);
 
     /**

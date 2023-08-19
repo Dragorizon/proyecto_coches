@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -18,5 +20,8 @@ public class MarcaCocheEntity {
     @Column(name = "descripcion")
     @NotEmpty
     private String description;
+
+    @OneToMany(mappedBy = "marcaCocheEntity", orphanRemoval = true)
+    private List<CocheEntity> carroEntities;
 
 }

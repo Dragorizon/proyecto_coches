@@ -3,6 +3,7 @@ package com.project.coches.domain.service;
 import com.project.coches.domain.dto.ClienteDto;
 import com.project.coches.domain.dto.ResponseClienteDto;
 import com.project.coches.domain.repository.IClienteRepository;
+import com.project.coches.domain.useCase.IClienteService;
 import com.project.coches.exception.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

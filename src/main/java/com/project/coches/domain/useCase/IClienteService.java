@@ -1,7 +1,6 @@
-package com.project.coches.domain.service;
+package com.project.coches.domain.useCase;
 
 import com.project.coches.domain.dto.ClienteDto;
-import com.project.coches.domain.dto.MarcaCocheDto;
 import com.project.coches.domain.dto.ResponseClienteDto;
 
 import java.util.List;
