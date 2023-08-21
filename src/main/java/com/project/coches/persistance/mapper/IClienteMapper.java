@@ -4,6 +4,7 @@ import com.project.coches.domain.dto.ClienteDto;
 import com.project.coches.persistance.entity.ClienteEntity;
 import com.project.coches.persistance.entity.MarcaCocheEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public interface IClienteMapper {
      * @param clienteDto dto a convertir
      * @return entity convertido
      */
+    @Mapping(target = "compraEntity", ignore = true)
     ClienteEntity toClienteEntity(ClienteDto clienteDto);
 
     /**

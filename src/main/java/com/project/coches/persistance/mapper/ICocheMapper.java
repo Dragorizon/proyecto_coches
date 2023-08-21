@@ -12,7 +12,8 @@ public interface ICocheMapper {
 
     CocheDto toCocheDto(CocheEntity cocheEntity);
 
-    @Mapping(target = "marcaCocheEntity", ignore = true) //se ignora el atributo de la relacion entre coche y marcaCoche
+    @Mapping(target = "marcaCocheEntity", ignore = true)
+    @Mapping(target = "cocheCompraEntity", ignore = true)//se ignora el atributo de la relacion entre coche y marcaCoche
     CocheEntity toCocheEntity(CocheDto cocheDto);
 
 
